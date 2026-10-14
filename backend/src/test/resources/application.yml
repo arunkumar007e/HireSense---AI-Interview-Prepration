@@ -1,0 +1,38 @@
+spring:
+  profiles:
+    active: test
+  datasource:
+    url: jdbc:h2:mem:hiresense_test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+
+app:
+  upload-dir: ${java.io.tmpdir}/hiresense-uploads-test
+  jwt:
+    secret: test-secret-key-that-is-long-enough-for-hs256-signing-algorithm
+    expiration-ms: 86400000
+  admin:
+    email: admin@hiresense.com
+    password: Admin@12345
+    name: HireSense Admin
+  ai:
+    provider: mock
+    openai:
+      api-key: ""
+      base-url: https://api.openai.com/v1
+      model: gpt-4o-mini
+      temperature: 0.3
+      max-tokens: 2000
+      timeout-seconds: 60
+
+logging:
+  level:
+    com.hiresense: INFO

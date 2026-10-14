@@ -1,0 +1,28 @@
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+target/
+
+# Generated TypeScript files
+*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts
+
+# IDE
+.idea/
+
+# Logs
+*.log
+
+# Uploaded resumes and user files
+backend/uploads/*
+!backend/uploads/.gitkeep
+# Generated Java classpath file
+backend/cp.txt

@@ -1,0 +1,7 @@
+# ===== Backend build =====
+target
+*.log
+.idea
+.vscode
+.DS_Store
+uploads

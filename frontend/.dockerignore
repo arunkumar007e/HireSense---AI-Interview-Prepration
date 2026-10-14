@@ -1,0 +1,13 @@
+# ===== Architecture =====
+# Frontend built separately, then nginx serves the static bundle and proxies /api
+# to the backend container. Backend is a multi-stage Maven build.
+
+# ===== Ignore local artifacts =====
+node_modules
+dist
+target
+.idea
+.vscode
+*.log
+.DS_Store
+.env

@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: hiresense-backend
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 12MB
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: false
+
+server:
+  port: ${SERVER_PORT:8080}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+
+app:
+  upload-dir: ${APP_UPLOAD_DIR:./uploads}
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+  admin:
+    email: ${APP_ADMIN_EMAIL:admin@hiresense.com}
+    password: ${APP_ADMIN_PASSWORD:Admin@12345}
+    name: ${APP_ADMIN_NAME:HireSense Admin}
+  ai:
+    provider: ${AI_PROVIDER:mock}
+    openai:
+      api-key: ${OPENAI_API_KEY:}
+      base-url: ${OPENAI_BASE_URL:https://api.openai.com/v1}
+      model: ${OPENAI_MODEL:gpt-4o-mini}
+      temperature: ${OPENAI_TEMPERATURE:0.3}
+      max-tokens: ${OPENAI_MAX_TOKENS:2000}
+      timeout-seconds: ${OPENAI_TIMEOUT_SECONDS:60}
+    mock:
+      question-bank-size: ${MOCK_QUESTION_BANK_SIZE:6}
+
+logging:
+  level:
+    com.hiresense: ${LOG_LEVEL:INFO}
